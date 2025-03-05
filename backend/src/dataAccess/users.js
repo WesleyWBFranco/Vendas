@@ -1,7 +1,6 @@
 import { Mongo } from "../database/mongo.js"
 import { ObjectId } from "mongodb"
 import crypto from 'crypto'
-import passport from "passport"
 
 const collectionName = 'users'
 
