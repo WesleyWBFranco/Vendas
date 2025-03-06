@@ -1,10 +1,11 @@
 import Navbar from "./components/navbar/navbar"
+import { Outlet } from "react-router-dom"
 
 export default function App() {
 	return (
 		<>
-		<Navbar/>
-			<h1>My Vendinha</h1>
+			<Navbar/>
+			<Outlet/>
 		</>
 	)
 }

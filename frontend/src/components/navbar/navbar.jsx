@@ -2,6 +2,7 @@ import styles from './navbar.module.css'
 import { LuShoppingCart, LuUser, LuMenu, LuSearch } from "react-icons/lu";
 import { Drawer } from '@mui/material'
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(false)
@@ -15,25 +16,35 @@ export default function Navbar() {
             <div className={styles.navbarItems}>
                 <div className={styles.navbarLinksContainer}>
                     <LuMenu className={styles.navbarLink}/>
-                    <img className={styles.logo}src="/logo.png" alt="" />
+                    <Link to={'/'}>
+                        <img className={styles.logo}src="/logo.png" alt="" />
+                    </Link>
                 </div>    
                 <div className={styles.navbarLinksContainer}>
-                    <a href="" className={styles.navbarLink}>Home</a>
-                    <a href="" className={styles.navbarLink}>Products</a>
+                    <Link to={'/'} className={styles.navbarLink}>Home</Link>
+                    <Link to={'/plates'} className={styles.navbarLink}>Plates</Link>
                     <LuSearch className={styles.navbarLink}/>
-                    <LuShoppingCart className={styles.navbarLink}/>
-                    <LuUser className={styles.navbarLink}/>
+                    <Link to={'/cart'}>
+                        <LuShoppingCart className={styles.navbarLink}/>
+                    </Link>
+                    <Link to={'/profile'}>
+                        <LuUser className={styles.navbarLink}/>
+                    </Link>                                            
                 </div>
             </div>
 
             <div className={styles.mobileNavbarItems}>
                 <div className={styles.navbarLinksContainer}>
                     <LuMenu className={styles.navbarLink} onClick={handleOpenMenu}/>
-                    <img className={styles.logo}src="/logo.png" alt="" />
+                    <Link to={'/'}>
+                        <img className={styles.logo}src="/logo.png" alt="" />
+                    </Link>
                 </div> 
                 <div className={styles.mobileNavbarLinksContainer}>
                     <LuSearch className={styles.navbarLink}/>
-                    <LuShoppingCart className={styles.navbarLink}/>
+                    <Link to={'/cart'}>
+                        <LuShoppingCart className={styles.navbarLink}/>
+                    </Link>
                 </div>
             </div> 
             
@@ -43,9 +54,9 @@ export default function Navbar() {
                 onClose={handleOpenMenu}
             >
                 <div className={styles.drawer}>
-                    <a href="" className={styles.navbarLink}>Home</a>
-                    <a href="" className={styles.navbarLink}>Products</a>
-                    <a href="" className={styles.navbarLink}>Profile</a>
+                    <Link to={'/'} className={styles.navbarLink}>Home</Link>
+                    <Link to={'/plates'} className={styles.navbarLink}>Plates</Link>
+                    <Link to={'/profile'} className={styles.navbarLink}>Profile</Link>
                 </div>
             </Drawer>
 

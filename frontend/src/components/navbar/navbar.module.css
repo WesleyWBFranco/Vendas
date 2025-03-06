@@ -1,7 +1,7 @@
 .navbarContainer {
     display: flex;
     align-items: center;
-    background-color: #001c46;
+    background-color: #f0f8ea;
     height: 96px;
 } 
 
@@ -50,7 +50,7 @@
     height: 100%;
     padding: 1em;
     gap: 1em;
-    background-color: #001c46;
+    background-color: #800c00;
     font-size: xx-large;
 }
 
