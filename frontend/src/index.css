@@ -2,18 +2,38 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
+	/* font-family: 'Inter'; */
 }
 
 #root {
 	font-size: x-large;
+	background-color: #f0f8ea;
+	min-height: 100vh;
+	color: #be8a60;
+	;  
+}
+
+main {
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 button {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: center;
 	width: fit-content;
-	background-color: #f0f8ea; 
+	background-color: #800c00; 
     color: #be8a60;  
 	border: none;
 	padding: 1em;
 	border-radius: 0.5em;
 	cursor: pointer;
+}
+
+p {
+	display: flex;
+	align-items: center;
+	gap: 0.2em;
 }

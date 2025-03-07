@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import authServices from "../../services/auth"
 import orderServices from "../../services/order"
 import styles from './page.module.css'
+import { LuLogOut, LuTimer, LuCircleX, LuCircleCheckBig } from "react-icons/lu";
+
 
 export default function Profile() {
     const { logout } = authServices()
@@ -33,14 +35,16 @@ export default function Profile() {
         <div className={styles.pageContainer}>
             <h1>{authData?.user?.fullname}</h1>
             <h3>{authData?.user?.email}</h3>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}>Logout<LuLogOut/></button>
 
             {ordersList.length > 0 ?
                 <div className={styles.ordersContainer}>
                     {ordersList.map((order) => (
                         <div key={order._id} className={styles.orderContainer}>
                             <h3>{order.pickupTime}</h3>
-                            <p>{order.pickupStatus}</p>
+                            {order.pickupStatus === 'Pending' ? <p className={`${styles.pickupStatus} ${styles.pending}`}><LuTimer/>{order.pickupStatus}</p> : null}
+                            {order.pickupStatus === 'Completed' ? <p className={`${styles.pickupStatus} ${styles.completed}`}><LuCircleCheckBig/>{order.pickupStatus}</p> : null}
+                            {order.pickupStatus === 'Canceled' ? <p className={`${styles.pickupStatus} ${styles.canceled}`}><LuCircleX/>{order.pickupStatus}</p> : null}
                             {order.orderItems.map((item) => (
                                 <div key={item._id}>
                                     <h4>{item.itemDetails[0].name}</h4>

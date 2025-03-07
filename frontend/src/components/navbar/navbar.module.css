@@ -1,7 +1,7 @@
 .navbarContainer {
     display: flex;
     align-items: center;
-    background-color: #f0f8ea;
+    background-color: #be8a60;
     height: 96px;
 } 
 
@@ -18,7 +18,7 @@
 }
 
 .navbarLink {
-    color: #be8a60
+    color: #800c00;
 }
 
 .navbarLinksContainer {
@@ -52,6 +52,10 @@
     gap: 1em;
     background-color: #800c00;
     font-size: xx-large;
+}
+
+.drawer .navbarLink {
+    color: #be8a60;
 }
 
 @media screen and (max-width: 700px) {

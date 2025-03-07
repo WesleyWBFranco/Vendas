@@ -17,7 +17,7 @@ export default function Navbar() {
                 <div className={styles.navbarLinksContainer}>
                     <LuMenu className={styles.navbarLink}/>
                     <Link to={'/'}>
-                        <img className={styles.logo}src="/logo.png" alt="" />
+                        <img className={styles.logo}src="/imgs/logo.png" alt="" />
                     </Link>
                 </div>    
                 <div className={styles.navbarLinksContainer}>
@@ -37,7 +37,7 @@ export default function Navbar() {
                 <div className={styles.navbarLinksContainer}>
                     <LuMenu className={styles.navbarLink} onClick={handleOpenMenu}/>
                     <Link to={'/'}>
-                        <img className={styles.logo}src="/logo.png" alt="" />
+                        <img className={styles.logo}src="/imgs/logo.png" alt="" />
                     </Link>
                 </div> 
                 <div className={styles.mobileNavbarLinksContainer}>
