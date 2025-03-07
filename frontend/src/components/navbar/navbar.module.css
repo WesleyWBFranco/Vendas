@@ -1,7 +1,7 @@
 .navbarContainer {
     display: flex;
     align-items: center;
-    background-color: #be8a60;
+    background-color: #800c00;
     height: 96px;
 } 
 
@@ -18,7 +18,7 @@
 }
 
 .navbarLink {
-    color: #800c00;
+    color: #be8a60;
 }
 
 .navbarLinksContainer {
