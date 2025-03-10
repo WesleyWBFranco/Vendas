@@ -10,8 +10,8 @@ export default function Home() {
                 <h1>Bem-vindo, pode entrar!</h1>
                 <p>
                 Aqui no Toc Toc, a gente bate na sua porta com lanches feitos com carinho! 
-                Preparamos tudo no nosso apartamento e entregamos direto para os vizinhos 
-                do prédio, trazendo sabores caseiros e fresquinhos até você. Do salgado ao 
+                Preparamos tudo no nosso apartamento e entregamos direto para vocês vizinhos 
+                do prédio, levando sabores caseiros e fresquinhos. Do salgado ao 
                 doce, é só pedir e aguardar, logo estaremos aí!
                 </p>
             </section>

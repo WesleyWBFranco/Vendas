@@ -5,6 +5,7 @@
     justify-content: center;
     gap: 2em;
     padding: 0.5em;
+    color: #800c00;
 }
 
 .foodSection {
@@ -12,7 +13,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2em;
     background-color: #800c00;
-    color: #be8a60;
+    color: white;
     padding: 2em;
     border-radius: 2em;
 }

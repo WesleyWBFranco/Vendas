@@ -18,7 +18,7 @@
 }
 
 .navbarLink {
-    color: #be8a60;
+    color: white;
 }
 
 .navbarLinksContainer {
@@ -55,7 +55,7 @@
 }
 
 .drawer .navbarLink {
-    color: #be8a60;
+    color: white;
 }
 
 @media screen and (max-width: 700px) {

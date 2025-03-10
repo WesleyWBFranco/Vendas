@@ -9,13 +9,14 @@
 	font-size: x-large;
 	background-color: #fffff2;
 	min-height: 100vh;
-	color: #be8a60;
+	color: #800c00;
 	;  
 }
 
 main {
 	max-width: 1280px;
 	margin: 0 auto;
+	min-height: 100vh;
 }
 
 button {
@@ -25,7 +26,7 @@ button {
 	justify-content: center;
 	width: fit-content;
 	background-color: #800c00; 
-    color: #be8a60;  
+    color: white;  
 	border: none;
 	padding: 1em;
 	border-radius: 0.5em;

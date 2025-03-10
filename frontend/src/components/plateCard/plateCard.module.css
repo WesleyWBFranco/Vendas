@@ -1,0 +1,16 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 420px;
+}
+
+.cardContainer img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.2em;
+}
+
+.cardContent {
+    padding: 0.5em;
+}
