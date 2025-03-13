@@ -1,10 +1,15 @@
+import { useState } from "react"
 import { useCartContext } from "../../contexts/useCartContext"
 import styles from './page.module.css' 
 import { LuCircleMinus } from 'react-icons/lu'
+import ConfirmOrderPopup from "../../components/confirmOrderPopup/confirmOrderPopup"
+import orderServices from "../../services/order"
 
 export default function Cart() {
     
-    const { cartItems, updateCartItems, removeFromCart } = useCartContext()
+    const { cartItems, updateCartItems, removeFromCart, clearCart } = useCartContext()
+    const [confirmPopupOpen, setConfirmPopupOpen] = useState(false)
+    const { sendOrder } = orderServices()
 
     const handleChangeItemQty = (mode, itemId) => {
         const updatedCartItem = cartItems.map((item) => {
@@ -22,7 +27,19 @@ export default function Cart() {
         updateCartItems(updatedCartItem)
     }
     
-    console.log(cartItems)
+    const handleOpenPopup = e => {
+        e.preventDefault()
+        setConfirmPopupOpen(!confirmPopupOpen)
+    }
+
+    const handleConfirmOrder = (orderData) => {
+        orderData.items = cartItems.map((item) => {
+            return { plateId: item._id, quantity: item.quantity }
+        })
+        sendOrder(orderData)
+        setConfirmPopupOpen(!confirmPopupOpen)
+        clearCart()
+    }
 
     if(!cartItems.length) {
         return (
@@ -34,33 +51,37 @@ export default function Cart() {
     }
 
     return (
-        <div className={styles.pageContainer}> 
-            <h1>Your items:</h1>
-            <section>
-                <div className={styles.itemsListContainer}>
-                    {cartItems.map((item) => (
-                        <div className={styles.itemContainer} key={item._id}>
-                            <img src={item.imgUrl} alt="" />
-                            <div className={styles.itemContent}>
-                                <h2>{item.name}</h2>
-                                <p className={styles.ingredients}>[{String (item.ingredients)}]</p>
-                                <p>{item.description}</p>
-                                <div className={styles.portionContainer}>
-                                    <p>Portions:</p>
-                                    <p>{item.quantity}</p>
-                                    <div className={styles.portionBtns}>
-                                        <button onClick={() => {handleChangeItemQty('less', item._id)}}>-</button>
-                                        <button onClick={() => {handleChangeItemQty('more', item._id)}}>+</button>
+        <>
+            <div className={styles.pageContainer}> 
+                <h1>Your items:</h1>
+                <section>
+                    <div className={styles.itemsListContainer}>
+                        {cartItems.map((item) => (
+                            <div className={styles.itemContainer} key={item._id}>
+                                <img src={item.imgUrl} alt="" />
+                                <div className={styles.itemContent}>
+                                    <h2>{item.name}</h2>
+                                    <p className={styles.ingredients}>[{String (item.ingredients)}]</p>
+                                    <p>{item.description}</p>
+                                    <div className={styles.portionContainer}>
+                                        <p>Portions:</p>
+                                        <p>{item.quantity}</p>
+                                        <div className={styles.portionBtns}>
+                                            <button onClick={() => {handleChangeItemQty('less', item._id)}}>-</button>
+                                            <button onClick={() => {handleChangeItemQty('more', item._id)}}>+</button>
+                                        </div>
                                     </div>
+                                    <button button onClick={() => {removeFromCart(item._id)}}><LuCircleMinus />Remove item</button>
                                 </div>
-                                <button button onClick={() => {removeFromCart(item._id)}}><LuCircleMinus />Remove item</button>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+                        ))}
+                    </div>
+                </section>
 
-            <button className={styles.confirmBtn}>Confirm your order!</button>
-        </div>
+                <button className={styles.confirmBtn} onClick={handleOpenPopup }>Confirm your order!</button>
+            </div>
+
+            <ConfirmOrderPopup open={confirmPopupOpen} onClose={handleOpenPopup} onConfirm={handleConfirmOrder} />
+        </>
     )
 }
