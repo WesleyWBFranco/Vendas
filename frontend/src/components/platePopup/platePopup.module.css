@@ -1,6 +1,7 @@
 .popupContainer {
     background-color: #ffffff;
     color: #800c00;
+
 }
 
 .popupContainer img {
@@ -18,4 +19,25 @@
 
 .ingredients {
     color: #c66060;
+}
+
+.quantityContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.quantityContainer button {
+    background-color: #800c00;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantityContainer span {
+    font-size: 1.2rem;
+    font-weight: bold;
 }

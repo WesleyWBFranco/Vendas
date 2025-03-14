@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { LuCircleMinus } from 'react-icons/lu'
 import ConfirmOrderPopup from "../../components/confirmOrderPopup/confirmOrderPopup"
 import orderServices from "../../services/order"
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
     
@@ -45,7 +46,7 @@ export default function Cart() {
         return (
             <div>
                 <h1>Your cart is empty... :/</h1>
-                <button>See our specialities!</button>
+                <Link to={'/plates'}>See our specialities!</Link>
             </div>
         )    
     }
@@ -53,7 +54,7 @@ export default function Cart() {
     return (
         <>
             <div className={styles.pageContainer}> 
-                <h1>Your items:</h1>
+                <h1>Seus items:</h1>
                 <section>
                     <div className={styles.itemsListContainer}>
                         {cartItems.map((item) => (
@@ -64,21 +65,21 @@ export default function Cart() {
                                     <p className={styles.ingredients}>[{String (item.ingredients)}]</p>
                                     <p>{item.description}</p>
                                     <div className={styles.portionContainer}>
-                                        <p>Portions:</p>
+                                        <p>Quantidade:</p>
                                         <p>{item.quantity}</p>
                                         <div className={styles.portionBtns}>
                                             <button onClick={() => {handleChangeItemQty('less', item._id)}}>-</button>
                                             <button onClick={() => {handleChangeItemQty('more', item._id)}}>+</button>
                                         </div>
                                     </div>
-                                    <button button onClick={() => {removeFromCart(item._id)}}><LuCircleMinus />Remove item</button>
+                                    <button button onClick={() => {removeFromCart(item._id)}}><LuCircleMinus />Remover item</button>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </section>
 
-                <button className={styles.confirmBtn} onClick={handleOpenPopup }>Confirm your order!</button>
+                <button className={styles.confirmBtn} onClick={handleOpenPopup }>Finalize seu pedido!</button>
             </div>
 
             <ConfirmOrderPopup open={confirmPopupOpen} onClose={handleOpenPopup} onConfirm={handleConfirmOrder} />

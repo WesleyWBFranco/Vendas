@@ -9,10 +9,10 @@ export default function Home() {
             <section>
                 <h1>Bem-vindo, pode entrar!</h1>
                 <p>
-                Aqui no Toc Toc, a gente bate na sua porta com lanches feitos com carinho! 
-                Preparamos tudo no nosso apartamento e entregamos direto para vocês vizinhos 
-                do prédio, levando sabores caseiros e fresquinhos. Do salgado ao 
-                doce, é só pedir e aguardar, logo estaremos aí!
+                Somos um casal apaixonado por comida boa, e juntos preparamos cada receita com dedicação, 
+                direto do nosso apartamento para vocês vizinhos do prédio. Do salgado ao doce, tudo é feito 
+                com ingredientes frescos e um toque caseiro especial. Escolha sua opção, peça e aguarde... 
+                logo estaremos aí batendo na sua porta!
                 </p>
             </section>
 
@@ -29,16 +29,6 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className={styles.contactSection}>
-                <h1>Fique por dentro!</h1>
-                <p>
-                    Entre em nossas redes sociais e confira todas as novidades.
-                </p>
-                <div className={styles.socialButtonsContainer}>
-                    <button className={styles.socialButton}><FaInstagram/>Instagram</button>
-                    <button className={styles.socialButton}><FaWhatsapp/>WhatsApp</button>
-                </div>
-            </section>
         </div>
     )
 }

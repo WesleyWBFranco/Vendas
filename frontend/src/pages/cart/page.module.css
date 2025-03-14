@@ -6,29 +6,31 @@
 }
 
 .itemContainer {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Garante espaçamento uniforme */
     gap: 1em;
 }
 
 .itemContainer img {
     width: 300px;
     height: 100%;
-    border-radius: 0.2em;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .itemsListContainer {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin-bottom: 1em;
 }
 
 .itemContent {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    width: 100%;
+    align-items: flex-start;
 }
 
 .ingredients {

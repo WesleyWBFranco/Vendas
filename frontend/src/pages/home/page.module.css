@@ -16,6 +16,7 @@
     color: white;
     padding: 2em;
     border-radius: 2em;
+    margin-bottom: 2em;
 }
 
 .foodSection i {
@@ -37,20 +38,4 @@
     flex-direction: column;
     text-align: center;
     gap: 0.5em;
-}
-
-.contactSection {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
-}
-
-.socialButtonsContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.2em;
-}
-
-.socialButton {
-    width: 100%;
 }

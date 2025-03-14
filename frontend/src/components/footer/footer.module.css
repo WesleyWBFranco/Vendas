@@ -16,7 +16,15 @@
     width: 10em;
 }
 
-.link {
+
+.socialButtonsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    justify-content: center;
+
+}
+
+.socialButton {
     color: #ffffff;
-    text-decoration: underline;
 }

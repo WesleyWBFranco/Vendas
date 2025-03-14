@@ -34,9 +34,16 @@ export default function Profile() {
 
     return (
         <div className={styles.pageContainer}>
-            <h1>{authData?.user?.fullname}</h1>
-            <h3>{authData?.user?.email}</h3>
-            <button onClick={handleLogout}>Logout<LuLogOut/></button>
+            <div className={styles.pageInfo}>
+                <h1>{authData?.user?.fullname}</h1>
+                <button onClick={handleLogout}>Logout<LuLogOut/></button>
+            </div>
+
+            <div>
+                <h2>
+                    Meus pedidos:
+                </h2>
+            </div>
 
             {ordersList.length > 0 ?
                 <div className={styles.ordersContainer}>
